@@ -21,18 +21,10 @@ function send_msg(data,callback){
 }
 function token(time) {
   var str = String([keys.ESHQ_KEY,keys.ESHQ_SECRET,time].join(":"))
-  return crypto.createHmac('sha1',str).update(str).digest('hex');  
+  return crypto.createHmac('sha1', "").update(str).digest('hex');
 }
 function credentials() {
-  var now = new Date(); 
-  var time = String(Date.UTC(
-    now.getUTCFullYear(),
-    now.getUTCMonth(),
-    now.getUTCDate(),
-    now.getUTCHours(),
-    now.getUTCMinutes(),
-    now.getUTCSeconds()
-  )).slice(0,10)+".000000s";
+  var time = new Date().getTime() / 1000;
   return {"key":keys.ESHQ_KEY, "timestamp":time, "token":token(time)}
 }
 function post(path,data,callback) {
