@@ -21,7 +21,7 @@ function send_msg(data,callback){
 }
 function token(time) {
   var str = String([keys.ESHQ_KEY,keys.ESHQ_SECRET,time].join(":"))
-  return crypto.createHmac('sha1', "").update(str).digest('hex');
+  return crypto.createHash('sha1').update(str).digest('hex');
 }
 function credentials() {
   var time = new Date().getTime() / 1000;
@@ -41,6 +41,7 @@ function post(path,data,callback) {
     ,headers: {'Content-Type': 'application/json'}
   };
   var request = http.request(options, function(response) {
+    response.setEncoding('utf8');
     response.on('data', function(d) {
       response_ready = d;
     });
