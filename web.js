@@ -37,6 +37,7 @@ function credentials() {
 }
 function post(path,data,callback) {
   data = querystring.stringify(merge(data,credentials()));
+  console.log(data)
   var eshq_url   = require("url").parse(keys.ESHQ_URL);
 
   var response_ready;
@@ -66,20 +67,17 @@ function post(path,data,callback) {
 }
 
 open_msg_channel({
-  "channel": "some-channel", // Required
-  "data": "{/'msg/': /'data/'}", // Required
-  "id": "event-id", // optional
-  "name": "event-name" // optional
+  "channel": "some-channel"
 },function(res){
   console.log("open a channel")
   console.log(res)
 })
 
 send_msg({
-  "channel": "some-channel", // Required
-  "data": "{/'msg/': /'data/'}", // Required
-  "id": "event-id", // optional
-  "name": "event-name" // optional
+  "channel": "some-channel" // Required
+  ,"data": {'msg': 'data'} // Required
+  //,"id": "event-id" // optional
+  //,"name": "event-name" // optional
 },function(res){
   console.log("sending a message")
   console.log(res)
