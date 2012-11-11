@@ -41,7 +41,6 @@ function post(path,data,callback) {
     ,headers: {'Content-Type': 'application/json'}
   };
   var request = http.request(options, function(response) {
-    response.setEncoding('utf8');
     response.on('data', function(d) {
       response_ready = d;
     });
