@@ -28,7 +28,8 @@ function credentials() {
   return {"key":keys.ESHQ_KEY, "timestamp":time, "token":token(time)}
 }
 function post(path,data,callback) {
-  data = querystring.stringify(merge(data,credentials()));
+  // data = querystring.stringify(merge(data,credentials()));
+  data = JSON.stringify(merge(data,credentials()));
   console.log(data)
   var eshq_url   = require("url").parse(keys.ESHQ_URL);
 
