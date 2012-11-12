@@ -1,8 +1,7 @@
-
 var keys = {
-   "ESHQ_KEY"            : "9ccf66d2-1a3e-4f83-8d19-63fd7b920100"
-  ,"ESHQ_SECRET"         : "a8ffc2c7-d238-439b-b364-71c84cdd64c4"
-  ,"ESHQ_URL"            : "http://app.eventsourcehq.com"
+   "ESHQ_KEY"            : process.env.ESHQ_KEY
+  ,"ESHQ_SECRET"         : process.env.ESHQ_SECRET
+  ,"ESHQ_URL"            : process.env.ESHQ_URL
 }
 
 var querystring = require('querystring');
@@ -24,7 +23,7 @@ function token(time) {
   return crypto.createHash('sha1').update(str).digest('hex');
 }
 function credentials() {
-  var time = new Date().getTime() / 1000;
+  var time = Math.floor(new Date().getTime() / 1000);
   return {"key":keys.ESHQ_KEY, "timestamp":String(time), "token":token(String(time))}
 }
 function post(path,data,callback) {
@@ -38,9 +37,8 @@ function post(path,data,callback) {
     host: eshq_url.host,
     port: 80,
     path: path,
-    method: 'POST'
-    // ,headers: {'Content-Type': 'application/json'}
-    ,headers: {'Content-Type': 'application/x-www-form-urlencoded','Content-Length':data.length}
+    method: 'POST',
+    headers: {'Content-Type': 'application/x-www-form-urlencoded','Content-Length':data.length}
   };
   var request = http.request(options, function(response) {
     response.setEncoding('utf8');
