@@ -28,8 +28,8 @@ function credentials() {
   return {"key":keys.ESHQ_KEY, "timestamp":String(time), "token":token(String(time))}
 }
 function post(path,data,callback) {
-  data = querystring.stringify(merge(data,credentials()));
-  // data = JSON.stringify(merge(data,credentials()));
+  // data = querystring.stringify(merge(data,credentials()));
+  data = JSON.stringify(merge(data,credentials()));
   console.log(data)
   var eshq_url   = require("url").parse(keys.ESHQ_URL);
 
@@ -39,8 +39,8 @@ function post(path,data,callback) {
     port: 80,
     path: path,
     method: 'POST'
-    // ,headers: {'Content-Type': 'application/json'}
-    ,headers: {'Content-Type': 'application/x-www-form-urlencoded','Content-Length':data.length}
+    ,headers: {'Content-Type': 'application/json'}
+    // ,headers: {'Content-Type': 'application/x-www-form-urlencoded','Content-Length':data.length}
   };
   var request = http.request(options, function(response) {
     response.setEncoding('utf8');
@@ -51,6 +51,7 @@ function post(path,data,callback) {
       callback(response_ready)
     }
     response.on('end', done);
+    // response.on('close', done);
   }).on('error', function(e) {
     console.error(e);
   });
