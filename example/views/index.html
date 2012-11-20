@@ -1,0 +1,18 @@
+<html>
+<head>
+  <title>Simple test to the eshq-js</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+  <script src="https://app.eventsourcehq.com/es.js"></script>
+
+  <script type="text/javascript">
+    var es = new ESHQ("some-channel");
+
+    es.addEventListener("notification", function(e) {
+      console.log(e.data);
+    });
+  </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "author": "Tcha-Tcho <tchatcho66@hotmail.com>",
+  "contributors": [
+    "Mathias Biilmann <mathiasch@eventsourcehq.com> (http://eventsourcehq.com)"
+  ],
+  "name": "eshq-js",
+  "description": "EventSource HQ module for node.js",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tcha-tcho/eshq-js.git"
+  },
+  "homepage": "https://github.com/tcha-tcho/eshq-js",
+  "engines": {},
+  "dependencies": {},
+  "devDependencies": {
+    "express": "~3.0.0",
+    "mocha": "*",
+    "should": "*",
+    "methods": "0.0.1"
+  },
+  "scripts": {
+    "test": "mocha -r should -R spec"
+  }
+}
