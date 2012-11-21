@@ -15,18 +15,36 @@ Run `node app.js` from `examples` and open `localhost:3000` to see a working exa
 
 Given a channel, `some-channel`:
 
-    ESHQ.send(
-        :channel => "messages",
-        :name => "notification",
-        :data => "You should sign up for EventSource HQ!"
-    )
+    var app = require('express')()
+      , eshq = require('../')({
+         key    : "key"
+        ,secret : "secret"
+      }).listen(app)
+
+    //now you can use this methods
+    eshq.open({
+      channel: "some-channel"
+    },function(res){
+      console.log("channel is ready")
+    })
+
+    eshq.send({
+       channel: "some-channel" // Required
+      ,data   : "your message" // Required
+      ,name   : "notification" // optional
+      ,id     : "event-id"     // optional
+    },function(res){
+      console.log("message is delivered")
+    })
+
+    app.listen(3000);
 
 And a layout, `test.html`:
 
     <!DOCTYPE html>
     <html>
     <head>
-      <script type="text/javascript" src="https://app.eventsourcehq.com/es.js"></script>
+      <script type="text/javascript" src="http://app.eventsourcehq.com/es.js"></script>
       <script type="text/javascript">
         var es = new ESHQ("some-channel");
 
@@ -45,16 +63,9 @@ You get the following result:
     HTTP/1.1 200 OK
     Content-Type: text/event-stream
 
-    data: This is an event
-
+    id: event-id
     event: notification
-    data: This is a notification
-
-    id: 12345
-    data: This is an event with an id
-
-    data: Multiline event
-    data: Line 2
+    data: your message
 
 
 ## Features
