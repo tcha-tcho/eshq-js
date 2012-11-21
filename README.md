@@ -26,7 +26,7 @@ And a layout, `test.html`:
     <!DOCTYPE html>
     <html>
     <head>
-      <script type="text/javascript" src="./eshq.js"></script>
+      <script type="text/javascript" src="https://app.eventsourcehq.com/es.js"></script>
       <script type="text/javascript">
         var es = new ESHQ("some-channel");
 

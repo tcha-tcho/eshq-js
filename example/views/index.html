@@ -5,14 +5,21 @@
   <script src="https://app.eventsourcehq.com/es.js"></script>
 
   <script type="text/javascript">
+    function log(text) {
+      document.getElementById("response").innerHTML += "<br>" + JSON.stringify(text);
+    }
+
     var es = new ESHQ("some-channel");
 
     es.addEventListener("notification", function(e) {
-      console.log(e.data);
+      log(e.data)
     });
   </script>
 </head>
 <body>
-
+  <h1>Simple test for EventSource HQ</h1>
+  <small>Small test for responses</small>
+  <hr>
+  <div id="response"></div>
 </body>
 </html>

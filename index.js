@@ -2,6 +2,7 @@ var querystring = require('querystring');
 var crypto      = require('crypto');
 var http        = require('http');
 var url_parser  = require("url");
+var EventEmitter = process.EventEmitter;
 
 module.exports = function(options) {
 
@@ -42,17 +43,24 @@ module.exports = function(options) {
       response.on('data', function(d) {
         response_ready = d;
       });
-      function done(){
-        callback(response_ready)
-      }
+      function done(){callback(response_ready) }
       response.on('end', done);
-      // response.on('close', done);
     }).on('error', function(e) {
       console.error(e);
     });
     request.write(data);
     request.end();
   }
+  function body_parser(req,callback){
+    var body = '';
+    req.on('data', function (data) {
+      body += data;
+    });
+    req.on('end', function () {
+      callback(querystring.parse(body));
+    });
+  }
+
 
   //public methods
   return {
@@ -62,5 +70,27 @@ module.exports = function(options) {
     send: function(data,callback) {
       post("/event", data, callback)
     },
+    listen: function (app, options, fn) {
+      var self = this;
+      app.use(function(req,res,next){
+        if (req._parsedUrl.pathname == '/eshq/socket') {
+          body_parser(req,function(data){
+            self.open(data,function(response){
+              res.send(response)
+            })
+          })
+        } else if (req._parsedUrl.pathname == '/eshq/event') {
+          body_parser(req,function(data){
+            self.send(data,function(response){
+              res.send(response)
+            })
+          })
+        }else{
+          next();
+        };
+      })
+      return this
+    }
+
   }
 }

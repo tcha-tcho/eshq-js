@@ -1,43 +1,34 @@
-var express = require('express')
-  , app = express()
+var app = require('express')()
   , eshq = require('../')({
-     key            : "9ccf66d2-1a3e-4f83-8d19-63fd7b920100"
-    ,secret         : "a8ffc2c7-d238-439b-b364-71c84cdd64c4"
+     key    : "9ccf66d2-1a3e-4f83-8d19-63fd7b920100"
+    ,secret : "a8ffc2c7-d238-439b-b364-71c84cdd64c4"
+  }).listen(app)
+
+
+// eshq.open({
+//   channel: "some-channel"
+// },function(res){
+//   console.log("openning a channel")
+//   console.log(res)
+// })
+
+setInterval(function(){
+  eshq.send({
+    channel: "some-channel" // Required
+    ,data: String(new Date().getTime()) // Required
+    ,"name": "notification" // optional
+    ,"id": "event-id" // optional
+  },function(res){
+    console.log("sending a message")
   })
-
-eshq.open({
-  channel: "some-channel"
-},function(res){
-  console.log("openning a channel")
-  console.log(res)
-})
-
-eshq.send({
-  channel: "some-channel" // Required
-  ,data: {'msg': String(new Date().getTime()) } // Required
-  ,"id": "event-id" // optional
-  ,"name": "event-name" // optional
-},function(res){
-  console.log("sending a message")
-  console.log(res)
-})
+},3000)
 
 
-
-
-app.set('views',__dirname + '/views');
-
-// render 'index' into 'boilerplate':
+var fs = require('fs');
 app.get('/',function(req,res,next){
-  // res.render('index', { what: 'best', who: 'me', muppets: [ 'Kermit', 'Fozzie', 'Gonzo' ] });
+  fs.readFile(__dirname + '/views/index.html', 'utf8', function(err, text){
+    res.send(text);
+  });
 });
-
-app.get('/foo.js', function(req,res,next){
-	res.sendfile('foo.js');
-})
-
-app.get('/foo.css', function(req,res,next){
-	res.sendfile('foo.css');
-})
 
 app.listen(3000);
