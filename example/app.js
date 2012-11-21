@@ -17,7 +17,7 @@ setInterval(function(){
 
 var fs = require('fs');
 app.get('/',function(req,res,next){
-  fs.readFile(__dirname + '/views/index.html', 'utf8', function(err, text){
+  fs.readfile(__dirname + '/views/index.html', 'utf8', function(err, text){
     res.send(text);
   });
 });

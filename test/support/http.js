@@ -5,7 +5,8 @@
 
 var EventEmitter = require('events').EventEmitter
   , methods = require('methods')
-  , http = require('http');
+  , http = require('http')
+  , querystring = require('querystring');
 
 module.exports = request;
 
@@ -101,3 +102,36 @@ Request.prototype.end = function(fn){
 
   return this;
 };
+
+Request.prototype.post = function(path,data,callback){
+
+  data = querystring.stringify(data);
+  var callback = callback;
+  var response_ready;
+  var server_address = this.server.address()
+
+  var options = {
+      method: "POST"
+    , port: server_address.port
+    , host: server_address.address
+    , path: path
+    , headers: {'Content-Type': 'application/x-www-form-urlencoded','Content-Length':data.length}
+  };
+
+  var request = http.request(options, function(response) {
+    response.setEncoding('utf8');
+    response.on('data', function(d) {
+      response_ready = d;
+    });
+    function done(){
+      callback(response_ready)
+    }
+    response.on('end', done);
+  }).on('error', function(e) {
+    console.error(e);
+  });
+  request.write(data);
+  request.end();
+
+};
+
