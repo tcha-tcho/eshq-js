@@ -16,7 +16,7 @@ Run `node app.js` from `examples` and open `localhost:3000` to see a working exa
 Given a channel, `some-channel`:
 
     var app = require('express')()
-      , eshq = require('../')({
+      , eshq = require('eshq-js')({
          key    : "key"
         ,secret : "secret"
       }).listen(app)

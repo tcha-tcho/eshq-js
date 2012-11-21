@@ -2,7 +2,6 @@ var querystring = require('querystring');
 var crypto      = require('crypto');
 var http        = require('http');
 var url_parser  = require("url");
-var EventEmitter = process.EventEmitter;
 
 module.exports = function(options) {
 
@@ -85,7 +84,7 @@ module.exports = function(options) {
               res.send(response)
             })
           })
-        }else{
+        } else {
           next();
         };
       })

@@ -4,14 +4,6 @@ var app = require('express')()
     ,secret : "a8ffc2c7-d238-439b-b364-71c84cdd64c4"
   }).listen(app)
 
-
-// eshq.open({
-//   channel: "some-channel"
-// },function(res){
-//   console.log("openning a channel")
-//   console.log(res)
-// })
-
 setInterval(function(){
   eshq.send({
     channel: "some-channel" // Required
@@ -22,7 +14,6 @@ setInterval(function(){
     console.log("sending a message")
   })
 },3000)
-
 
 var fs = require('fs');
 app.get('/',function(req,res,next){
