@@ -15,48 +15,52 @@ Run `node app.js` from `examples` and open `localhost:3000` to see a working exa
 
 Given a channel, `some-channel`:
 
-    var app = require('express')()
-      , eshq = require('eshq-js')({
-         key    : "key"
-        ,secret : "secret"
-      }).listen(app)
+```javascript
+var app = require('express')()
+  , eshq = require('eshq-js')({
+     key    : "key"
+    ,secret : "secret"
+  }).listen(app)
 
-    //now you can use this methods
-    eshq.open({
-      channel: "some-channel"
-    },function(res){
-      console.log("channel is ready")
-    })
+//now you can use this methods
+eshq.open({
+  channel: "some-channel"
+},function(res){
+  console.log("channel is ready")
+})
 
-    eshq.send({
-       channel: "some-channel" // Required
-      ,data   : "your message" // Required
-      ,name   : "notification" // optional
-      ,id     : "event-id"     // optional
-    },function(res){
-      console.log("message is delivered")
-    })
+eshq.send({
+   channel: "some-channel" // Required
+  ,data   : "your message" // Required
+  ,name   : "notification" // optional
+  ,id     : "event-id"     // optional
+},function(res){
+  console.log("message is delivered")
+})
 
-    app.listen(3000);
+app.listen(3000);
+```
 
 And a layout, `test.html`:
 
-    <!DOCTYPE html>
-    <html>
-    <head>
-      <script type="text/javascript" src="http://app.eventsourcehq.com/es.js"></script>
-      <script type="text/javascript">
-        var es = new ESHQ("some-channel");
+```HTML
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript" src="http://app.eventsourcehq.com/es.js"></script>
+  <script type="text/javascript">
+    var es = new ESHQ("some-channel");
 
-        es.addEventListener("notification", function(e) {
-          console.log(e.data);
-        });
-      </script>
-    </head>
-    <body>
+    es.addEventListener("notification", function(e) {
+      console.log(e.data);
+    });
+  </script>
+</head>
+<body>
 
-    </body>
-    </html>
+</body>
+</html>
+```
 
 You get the following result:
 
