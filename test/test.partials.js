@@ -1,8 +1,8 @@
 var app     = require('express')()
   , request = require('./support/http')
     , eshq    = require('../')({
-     key    : "9ccf66d2-1a3e-4f83-8d19-63fd7b920100"
-    ,secret : "a8ffc2c7-d238-439b-b364-71c84cdd64c4"
+     key    : "key"
+    ,secret : "secret"
   }).listen(app)
 
 

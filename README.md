@@ -12,6 +12,7 @@ Node.js module for [EventSource HQ](http://eventsourcehq.com) services.
 ## Usage
 
 Run `node app.js` from `examples` and open `localhost:3000` to see a working example.
+`Just remember to change 'key' and 'secret' to your own keys`
 
 Given a channel, `some-channel`:
 
@@ -99,6 +100,8 @@ The software behind EventSource HQ is being developed as a fully open-source pro
 To run the test suite first invoke the following command within the repo, installing the development dependencies:
 
     $ npm install -d
+
+Change the keys on `test/test.partials.js`
 
 then run the tests:
 
