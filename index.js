@@ -26,6 +26,7 @@ module.exports = function(options) {
     return {"key":key, "timestamp":String(time), "token":token(String(time))}
   }
   function post(path,data,callback) {
+    data.data = JSON.stringify(data.data);
     data = querystring.stringify(merge(data,credentials()));
     var callback = callback;
     var eshq_url   = url_parser.parse(url);
