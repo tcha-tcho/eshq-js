@@ -1,0 +1,107 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@1.1.65
+3 info using node@v0.8.14
+4 verbose publish [ '.' ]
+5 verbose read json /Users/tcha-tcho/Documents/codes/eshq-js/package.json
+6 verbose cache add [ '.', null ]
+7 silly cache add name=undefined spec="." args=[".",null]
+8 verbose parsed url { pathname: '.', path: '.', href: '.' }
+9 silly lockFile 3a52ce78- .
+10 verbose lock . /Users/tcha-tcho/.npm/3a52ce78-.lock
+11 verbose read json package.json
+12 verbose tar pack [ '/var/folders/z5/_r04jhb57g7cy4t3dfd2g3680000gn/T/npm-5444/1353868318275-0.8714655451476574/tmp.tgz',
+12 verbose tar pack   '.' ]
+13 verbose tarball /var/folders/z5/_r04jhb57g7cy4t3dfd2g3680000gn/T/npm-5444/1353868318275-0.8714655451476574/tmp.tgz
+14 verbose folder .
+15 info prepublish eshq-js@0.0.1
+16 silly lockFile fea4c785-18275-0-8714655451476574-tmp-tgz /var/folders/z5/_r04jhb57g7cy4t3dfd2g3680000gn/T/npm-5444/1353868318275-0.8714655451476574/tmp.tgz
+17 verbose lock /var/folders/z5/_r04jhb57g7cy4t3dfd2g3680000gn/T/npm-5444/1353868318275-0.8714655451476574/tmp.tgz /Users/tcha-tcho/.npm/fea4c785-18275-0-8714655451476574-tmp-tgz.lock
+18 silly lockFile fea4c785-18275-0-8714655451476574-tmp-tgz /var/folders/z5/_r04jhb57g7cy4t3dfd2g3680000gn/T/npm-5444/1353868318275-0.8714655451476574/tmp.tgz
+19 verbose tar unpack /var/folders/z5/_r04jhb57g7cy4t3dfd2g3680000gn/T/npm-5444/1353868318275-0.8714655451476574/tmp.tgz
+20 silly lockFile c8925471-18275-0-8714655451476574-package /var/folders/z5/_r04jhb57g7cy4t3dfd2g3680000gn/T/npm-5444/1353868318275-0.8714655451476574/package
+21 verbose lock /var/folders/z5/_r04jhb57g7cy4t3dfd2g3680000gn/T/npm-5444/1353868318275-0.8714655451476574/package /Users/tcha-tcho/.npm/c8925471-18275-0-8714655451476574-package.lock
+22 silly gunzTarPerm modes [ '755', '644' ]
+23 silly gunzTarPerm extractEntry package.json
+24 silly gunzTarPerm extractEntry .npmignore
+25 silly gunzTarPerm extractEntry README.md
+26 silly gunzTarPerm extractEntry index.js
+27 silly gunzTarPerm extractEntry example/app.js
+28 silly gunzTarPerm extractEntry example/views/index.html
+29 silly gunzTarPerm extractEntry test/test.partials.js
+30 silly gunzTarPerm extractEntry test/support/http.js
+31 verbose read json /var/folders/z5/_r04jhb57g7cy4t3dfd2g3680000gn/T/npm-5444/1353868318275-0.8714655451476574/package/package.json
+32 silly lockFile c8925471-18275-0-8714655451476574-package /var/folders/z5/_r04jhb57g7cy4t3dfd2g3680000gn/T/npm-5444/1353868318275-0.8714655451476574/package
+33 verbose from cache /var/folders/z5/_r04jhb57g7cy4t3dfd2g3680000gn/T/npm-5444/1353868318275-0.8714655451476574/package/package.json
+34 verbose tar pack [ '/Users/tcha-tcho/.npm/eshq-js/0.0.1/package.tgz',
+34 verbose tar pack   '/var/folders/z5/_r04jhb57g7cy4t3dfd2g3680000gn/T/npm-5444/1353868318275-0.8714655451476574/package' ]
+35 verbose tarball /Users/tcha-tcho/.npm/eshq-js/0.0.1/package.tgz
+36 verbose folder /var/folders/z5/_r04jhb57g7cy4t3dfd2g3680000gn/T/npm-5444/1353868318275-0.8714655451476574/package
+37 silly lockFile 876820ae-ho-npm-eshq-js-0-0-1-package-tgz /Users/tcha-tcho/.npm/eshq-js/0.0.1/package.tgz
+38 verbose lock /Users/tcha-tcho/.npm/eshq-js/0.0.1/package.tgz /Users/tcha-tcho/.npm/876820ae-ho-npm-eshq-js-0-0-1-package-tgz.lock
+39 silly lockFile 876820ae-ho-npm-eshq-js-0-0-1-package-tgz /Users/tcha-tcho/.npm/eshq-js/0.0.1/package.tgz
+40 silly lockFile 8f191817-a-tcho-npm-eshq-js-0-0-1-package /Users/tcha-tcho/.npm/eshq-js/0.0.1/package
+41 verbose lock /Users/tcha-tcho/.npm/eshq-js/0.0.1/package /Users/tcha-tcho/.npm/8f191817-a-tcho-npm-eshq-js-0-0-1-package.lock
+42 silly lockFile 8f191817-a-tcho-npm-eshq-js-0-0-1-package /Users/tcha-tcho/.npm/eshq-js/0.0.1/package
+43 verbose tar unpack /Users/tcha-tcho/.npm/eshq-js/0.0.1/package.tgz
+44 silly lockFile 8f191817-a-tcho-npm-eshq-js-0-0-1-package /Users/tcha-tcho/.npm/eshq-js/0.0.1/package
+45 verbose lock /Users/tcha-tcho/.npm/eshq-js/0.0.1/package /Users/tcha-tcho/.npm/8f191817-a-tcho-npm-eshq-js-0-0-1-package.lock
+46 silly gunzTarPerm modes [ '755', '644' ]
+47 silly gunzTarPerm extractEntry package.json
+48 silly gunzTarPerm extractEntry .npmignore
+49 silly gunzTarPerm extractEntry README.md
+50 silly gunzTarPerm extractEntry index.js
+51 silly gunzTarPerm extractEntry example/app.js
+52 silly gunzTarPerm extractEntry example/views/index.html
+53 silly gunzTarPerm extractEntry test/test.partials.js
+54 silly gunzTarPerm extractEntry test/support/http.js
+55 verbose read json /Users/tcha-tcho/.npm/eshq-js/0.0.1/package/package.json
+56 silly lockFile 8f191817-a-tcho-npm-eshq-js-0-0-1-package /Users/tcha-tcho/.npm/eshq-js/0.0.1/package
+57 silly shasum updated bytes 5328
+58 info shasum b47080dc79b03d34a266307e6ee573c6c1f577b1
+58 info shasum /Users/tcha-tcho/.npm/eshq-js/0.0.1/package.tgz
+59 verbose from cache /Users/tcha-tcho/.npm/eshq-js/0.0.1/package/package.json
+60 verbose chmod /Users/tcha-tcho/.npm/eshq-js/0.0.1/package.tgz 644
+61 verbose chown /Users/tcha-tcho/.npm/eshq-js/0.0.1/package.tgz [ 501, 20 ]
+62 silly lockFile 3a52ce78- .
+63 silly publish { author: { name: 'Tcha-Tcho', email: 'tchatcho66@hotmail.com' },
+63 silly publish   contributors:
+63 silly publish    [ { name: 'Mathias Biilmann',
+63 silly publish        email: 'mathiasch@eventsourcehq.com',
+63 silly publish        url: 'http://eventsourcehq.com' } ],
+63 silly publish   name: 'eshq-js',
+63 silly publish   description: 'EventSource HQ module for node.js',
+63 silly publish   version: '0.0.1',
+63 silly publish   repository: { type: 'git', url: 'git://github.com/tcha-tcho/eshq-js.git' },
+63 silly publish   homepage: 'https://github.com/tcha-tcho/eshq-js',
+63 silly publish   engines: {},
+63 silly publish   dependencies: {},
+63 silly publish   devDependencies: { express: '~3.0.0', mocha: '*', should: '*', methods: '0.0.1' },
+63 silly publish   scripts: { test: 'mocha -r should -R spec' },
+63 silly publish   readme: '# eshq-js\n\nNode.js module for [EventSource HQ](http://eventsourcehq.com) services.\n\n## Installation\n\n    $ npm install eshq-js --save\n\n(`--save` automatically writes to your `package.json` file, tell your friends)\n\n\n## Usage\n\nRun `node app.js` from `examples` and open `localhost:3000` to see a working example.\n`Just remember to change \'key\' and \'secret\' to your own keys`\n\nGiven a channel, `some-channel`:\n\n```javascript\nvar app = require(\'express\')()\n  , eshq = require(\'eshq-js\')({\n     key    : "key"\n    ,secret : "secret"\n  }).listen(app)\n\n//now you can use this methods\neshq.open({\n  channel: "some-channel"\n},function(res){\n  console.log("channel is ready")\n})\n\neshq.send({\n   channel: "some-channel" // Required\n  ,data   : "your message" // Required\n  ,name   : "notification" // optional\n  ,id     : "event-id"     // optional\n},function(res){\n  console.log("message is delivered")\n})\n\napp.listen(3000);\n```\n\nAnd a layout, `test.html`:\n\n```HTML\n<!DOCTYPE html>\n<html>\n<head>\n  <script type="text/javascript" src="http://app.eventsourcehq.com/es.js"></script>\n  <script type="text/javascript">\n    var es = new ESHQ("some-channel");\n\n    es.addEventListener("notification", function(e) {\n      console.log(e.data);\n    });\n  </script>\n</head>\n<body>\n\n</body>\n</html>\n```\n\nYou get the following result:\n\n    HTTP/1.1 200 OK\n    Content-Type: text/event-stream\n\n    id: event-id\n    event: notification\n    data: your message\n\n\n## Features\n\n### `Fast, Easy and Reliable`\n\nEventSource HQ is hosted on EC2 and built for performance and scalability. Any Server Sent events implementation requires handling thousands of concurrent open connections. Traditional web servers are not built for this. EventSource HQ takes all the pain away from having to install, configure and manage a parallel infrastructure.\n\n### `Supports All Browsers`\n\nThe EventSource HQ client library takes care of all cross-browser support issues. Firefox, Chrome, Safari, Opera and Safari Mobile all support EventSource out of the box. For Internet Explorer, Webkit for Android and older browsers EventSource HQ handles all the tricky fallbacks for you. Just send events and we\'ll get them to your users.\n\n### `Fully Open Source`\n\nThe software behind EventSource HQ is being developed as a fully open-source project. The core of EventSource HQ is the Haskell based "EventSource Broker" that bridges between the message exchange RabbitMQ and EventSource. All source code is available on Github and you can always move to a self-hosted install if you prefer administrating your own infrastructure.\n\n\n## TODO\n\n - More Tests!\n - More templates.\n - Better, safer syntax.\n\n\n## Running Tests\n\nTo run the test suite first invoke the following command within the repo, installing the development dependencies:\n\n    $ npm install -d\n\nChange the keys on `test/test.partials.js`\n\nthen run the tests:\n\n    $ npm test\n\n\n## Backwards Compatibility\n\n[Browser Support](http://www.eventsourcehq.com/browser-support)\n\n## Credits\n\nThis library is a fork from Mathias Biilmann [ruby-gem library](https://github.com/eshq/eshq-gem), and the partial function remains relatively untouched from there. Mathias is still updating his library and We will try to maintain this one up-to-date.\n\nThe port syntax comes from [Tcha-Tcho](https://github.com/tcha-tcho)\n\n\n## License\n\n(The MIT License)\n\nCopyright (c) 2012 Mathias Biilmann &lt;mathiasch@eventsourcehq.com&gt;\nCopyright (c) 2012 Tcha-Tcho &lt;tchatcho66@hotmail.com&gt;\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\'Software\'), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \'AS IS\', WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n',
+63 silly publish   readmeFilename: 'README.md',
+63 silly publish   _id: 'eshq-js@0.0.1',
+63 silly publish   dist: { shasum: 'b47080dc79b03d34a266307e6ee573c6c1f577b1' } }
+64 verbose url raw eshq-js
+65 verbose url resolving [ 'https://registry.npmjs.org/', './eshq-js' ]
+66 verbose url resolved https://registry.npmjs.org/eshq-js
+67 info trying registry request attempt 1 at 16:32:01
+68 http PUT https://registry.npmjs.org/eshq-js
+69 http 409 https://registry.npmjs.org/eshq-js
+70 verbose url raw eshq-js
+71 verbose url resolving [ 'https://registry.npmjs.org/', './eshq-js' ]
+72 verbose url resolved https://registry.npmjs.org/eshq-js
+73 info trying registry request attempt 1 at 16:32:03
+74 http GET https://registry.npmjs.org/eshq-js
+75 http 200 https://registry.npmjs.org/eshq-js
+76 error publish fail Cannot publish over existing version.
+76 error publish fail Bump the 'version' field, set the --force flag, or
+76 error publish fail     npm unpublish 'eshq-js@0.0.1'
+76 error publish fail and try again
+77 error System Darwin 12.1.1
+78 error command "node" "/usr/local/bin/npm" "publish"
+79 error cwd /Users/tcha-tcho/Documents/codes/eshq-js
+80 error node -v v0.8.14
+81 error npm -v 1.1.65
+82 error code EPUBLISHCONFLICT
+83 verbose exit [ 1, true ]

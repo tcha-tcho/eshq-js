@@ -5,7 +5,7 @@
   ],
   "name": "eshq-js",
   "description": "EventSource HQ module for node.js",
-  "version": "0.0.1",
+  "version": "0.0.11",
   "repository": {
     "type": "git",
     "url": "git://github.com/tcha-tcho/eshq-js.git"
